@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh": "^1.13.9",
     "gh-pages": "^2.0.1",
+    "pages": "0.0.16",
     "query-string": "^6.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
