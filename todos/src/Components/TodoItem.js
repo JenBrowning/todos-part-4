@@ -1,18 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
+import { addTodo, deleteOne, toggleCompleted } from "../actions/index";
+import { connect } from "react-redux";
 
-export default function TodoItem(props) {
-  return (
-    <li className={props.completed ? "completed" : ""}>
-      <div className="view">
-        <input
-          className="toggle"
-          type="checkbox"
-          defaultChecked={props.completed}
-          onClick={props.completeTodo}
-        />
-        <label>{props.title}</label>
-        <button className="destroy" onClick={props.handleDeleteTodo} />
-      </div>
-    </li>
-  );
+class TodoItem extends Component {
+  render() {
+    const { title, completed, toggleCompleted, deleteOne } = this.props;
+
+    return (
+      <li className={completed ? "completed" : ""}>
+        <div className="view">
+          <input
+            className="toggle"
+            type="checkbox"
+            onClick={toggleCompleted}
+            defaultChecked={completed}
+          />
+          <label>{title}</label>
+          <button className="destroy" onClick={deleteOne} />
+        </div>
+      </li>
+    );
+  }
 }
+
+export default TodoItem;
